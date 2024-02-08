@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+}
+.nav li {
+    font-size: 80px;
+    background-color: blue;
+    color: aliceblue;
+    border: 40px;
+}
+
+img {
+    width: 100vw; /* 100% del ancho de la ventana gráfica */
+    height: 100vh; /* 100% de la altura de la ventana gráfica */
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor manteniendo su relación de aspecto */
+    position: fixed; /* Fija la imagen en la pantalla */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
