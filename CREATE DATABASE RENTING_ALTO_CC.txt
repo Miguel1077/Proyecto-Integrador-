@@ -1,0 +1,178 @@
+CREATE DATABASE RENTING_ALTO_CC;
+
+USE RENTING_ALTO_CC;
+
+-- Tabla de clientes
+CREATE TABLE clientes (
+    id_cliente VARCHAR(100) PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    telefono VARCHAR(50),
+    correo VARCHAR(100),
+);
+
+select * from clientes
+
+-- Tabla de motos
+CREATE TABLE motos (
+    id_moto VARCHAR(100) PRIMARY KEY,
+    marca VARCHAR(100),
+    modelo VARCHAR(100),
+    tipo VARCHAR(20)
+);
+
+SELECT * FROM motos;
+
+
+-- Tabla de asesores
+CREATE TABLE asesores (
+    id_asesor VARCHAR(100) PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    telefono VARCHAR(100),
+    correo VARCHAR(100),
+	id_cliente VARCHAR(100),
+	FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+);
+
+SELECT * FROM asesores;
+
+
+-- Tabla de clientes y motos
+CREATE TABLE clientes_motos (
+    id_cliente VARCHAR(100),
+    id_moto VARCHAR(100),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_moto) REFERENCES motos(id_moto),
+    PRIMARY KEY (id_cliente, id_moto)
+);
+
+SELECT * FROM clientes_motos;
+
+-- Tabla de ventas_alquileres
+CREATE TABLE ventas_alquileres (
+    id_venta INT PRIMARY KEY,
+    id_cliente VARCHAR(100),
+    id_moto VARCHAR(100),
+    fecha_venta DATE,
+    costo DECIMAL(10, 2),
+    duracion_alquiler INT,
+    estado_pago VARCHAR(20),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_moto) REFERENCES motos(id_moto)
+);
+
+SELECT * FROM ventas_alquileres;
+
+
+-- Verificar clave foránea entre motos y ventas_alquileres
+ALTER TABLE ventas_alquileres
+ADD CONSTRAINT fk_moto
+FOREIGN KEY (id_moto) REFERENCES motos(id_moto);
+
+-- Verificar clave foránea entre clientes y ventas_alquileres
+ALTER TABLE ventas_alquileres
+ADD CONSTRAINT fk_cliente
+FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente);
+
+INSERT INTO motos (id_moto, marca, modelo, tipo) 
+VALUES 
+('M001', 'Honda', 'CBR600RR', 'Deportiva'),
+('M002', 'Yamaha', 'YZF-R6', 'Deportiva'),
+('M003', 'Suzuki', 'GSX-R750', 'Deportiva'),
+('M004', 'Kawasaki', 'Ninja ZX-6R', 'Deportiva'),
+('M005', 'Ducati', 'Panigale V4', 'Deportiva'),
+('M006', 'BMW', 'S1000RR', 'Deportiva'),
+('M007', 'Triumph', 'Daytona 675', 'Deportiva'),
+('M008', 'KTM', 'RC 390', 'Deportiva'),
+('M009', 'Aprilia', 'RSV4', 'Deportiva'),
+('M010', 'MV Agusta', 'F4', 'Deportiva');
+
+-- Tabla de clientes y motos
+INSERT INTO clientes_motos (id_cliente, id_moto) 
+VALUES 
+('CL001', 'M001'),
+('CL002', 'M002'),
+('CL003', 'M003'),
+('CL004', 'M004'),
+('CL005', 'M005'),
+('CL006', 'M006'),
+('CL007', 'M007'),
+('CL008', 'M008'),
+('CL009', 'M009'),
+('CL010', 'M010');
+
+INSERT INTO ventas_alquileres (id_venta, id_cliente, id_moto, fecha_venta, costo, duracion_alquiler, estado_pago) 
+VALUES 
+(1, 'CL001', 'M001', '2024-04-01', 150.00, 7, 'Pagado'),
+(2, 'CL002', 'M002', '2024-04-02', 200.00, 5, 'Pendiente'),
+(3, 'CL003', 'M003', '2024-04-03', 180.00, 4, 'Pagado'),
+(4, 'CL004', 'M004', '2024-04-04', 170.00, 6, 'Pendiente'),
+(5, 'CL005', 'M005', '2024-04-05', 160.00, 8, 'Pagado'),
+(6, 'CL006', 'M006', '2024-04-06', 190.00, 3, 'Pendiente'),
+(7, 'CL007', 'M007', '2024-04-07', 210.00, 7, 'Pagado'),
+(8, 'CL008', 'M008', '2024-04-08', 220.00, 5, 'Pendiente'),
+(9, 'CL009', 'M009', '2024-04-09', 230.00, 6, 'Pagado'),
+(10, 'CL010', 'M010', '2024-04-10', 240.00, 4, 'Pendiente');
+
+-- Tabla de clientes
+INSERT INTO clientes (id_cliente, nombre, apellido, telefono, correo) 
+VALUES 
+('CL001', 'Juan', 'Garcia', '555-1234', 'juan@hotmail.com'),
+('CL002', 'Maria', 'Lopez', '555-5678', 'maria@gmail.com'),
+('CL003', 'Carlos', 'Martinez', '555-9876', 'carlos@hotmail.com'),
+('CL004', 'Laura', 'Diaz', '555-3456', 'laura@gmail.com'),
+('CL005', 'Andres', 'Perez', '555-7890', 'andres@hotmail.com'),
+('CL006', 'Ana', 'Rodriguez', '555-2345', 'ana@gmail.com'),
+('CL007', 'David', 'Sanchez', '555-8901', 'david@hotmail.com'),
+('CL008', 'Luisa', 'Gutierrez', '555-6543', 'luisa@gmail.com'),
+('CL009', 'Javier', 'Gomez', '555-2109', 'javier@hotmail.com'),
+('CL010', 'Elena', 'Torres', '555-5432', 'elena@gmail.com');
+
+-- Tabla de asesores
+INSERT INTO asesores (id_asesor, nombre, apellido, telefono, correo, id_cliente) 
+VALUES 
+('A001', 'Pedro', 'Martinez', '555-4321', 'pedro@hotmail.com', 'CL001'),
+('A002', 'Ana', 'Gonzalez', '555-8765', 'ana@gmail.com', 'CL002'),
+('A003', 'Diego', 'Ramirez', '555-5432', 'diego@hotmail.com', 'CL003'),
+('A004', 'Maria', 'Santos', '555-2109', 'maria_s@gmail.com', 'CL004'),
+('A005', 'Sofia', 'Hernandez', '555-9876', 'sofia@hotmail.com', 'CL005'),
+('A006', 'Juan', 'Lopez', '555-6543', 'juan_l@gmail.com', 'CL006'),
+('A007', 'Carlos', 'Diaz', '555-1234', 'carlos_d@hotmail.com', 'CL007'),
+('A008', 'Laura', 'Gomez', '555-8901', 'laura_g@gmail.com', 'CL008'),
+('A009', 'Javier', 'Perez', '555-3456', 'javier_p@hotmail.com', 'CL009'),
+('A010', 'Elena', 'Ruiz', '555-7890', 'elena_r@gmail.com', 'CL010');
+
+
+-- Necesitamos saber el nombre de los clientes que empiecen con la letra 'P'
+SELECT * FROM clientes WHERE nombre LIKE 'P%';
+
+-- Necesito saber el nombre de los clientes cuyo apellido termine por la letra 'z'
+SELECT * FROM clientes WHERE apellido LIKE '%z' ORDER BY id_cliente DESC;
+
+-- Se necesita saber cuántos campos se repiten en la tabla clientes en el campo nombre
+SELECT nombre, COUNT(nombre) AS conteo FROM clientes GROUP BY nombre ORDER BY nombre ASC;
+
+-- Se necesita hacer filtro de los datos que no se repiten en la tabla clientes
+SELECT nombre, COUNT(nombre) AS conteo FROM clientes GROUP BY nombre HAVING COUNT(*) < 2;
+
+-- Se necesita mostrar los primeros 3 datos de la tabla clientes
+SELECT TOP 3 * FROM clientes;
+
+-- Se necesita mostrar los datos de los clientes cuyo nombre sea 'Juan' o 'María'
+SELECT * FROM clientes WHERE nombre IN ('Juan', 'María');
+
+-- Se necesita que no se muestren los datos de los clientes cuyo nombre sea 'Pedro' o 'Laura'
+SELECT * FROM clientes WHERE nombre NOT IN ('Pedro', 'Laura');
+
+SELECT c.nombre, v.fecha_venta, v.costo
+FROM clientes c
+INNER JOIN ventas_alquileres v ON c.id_cliente = v.id_cliente;
+
+SELECT m.marca, m.modelo, v.fecha_venta, v.costo
+FROM motos m
+INNER JOIN ventas_alquileres v ON m.id_moto = v.id_moto;
+
+SELECT c.nombre AS nombre_cliente, a.nombre AS nombre_asesor
+FROM clientes c
+INNER JOIN asesores a ON c.id_cliente = a.id_cliente;

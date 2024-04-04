@@ -55,12 +55,12 @@ CREATE TABLE ventas_alquileres (
 );
 
 
--- Verificar clave for·nea entre motos y ventas_alquileres
+-- Verificar clave for√°nea entre motos y ventas_alquileres
 ALTER TABLE ventas_alquileres
 ADD CONSTRAINT fk_moto
 FOREIGN KEY (id_moto) REFERENCES motos(id_moto);
 
--- Verificar clave for·nea entre clientes y ventas_alquileres
+-- Verificar clave for√°nea entre clientes y ventas_alquileres
 ALTER TABLE ventas_alquileres
 ADD CONSTRAINT fk_cliente
 FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente);
