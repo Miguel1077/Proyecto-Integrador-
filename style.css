@@ -1,0 +1,249 @@
+:root {
+    --green: #00bf6f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+.header {
+    background-color: var(--green);
+    box-shadow: 20px 20px 20px 20px red;
+    position: relative; 
+    top: justify;
+    width: auto center;
+    font-family: Verdana;
+    color-scheme: var(--green);
+    color: var(--green);
+    border: 10px solid #000000;
+}
+.article{
+background-attachment: fixed;
+}
+
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+    color: rgb(255, 0, 0); /* Color del icono */
+    background-color: white; /* Color de fondo del botón */
+    width: 50px; /* Tamaño del botón de hamburguesa */
+    height: 50px;
+    position: relative; 
+    top: justify;
+    width: auto center;
+    font-family: 'Times New Roman';    
+    color: white;
+}
+
+/* Cambiar el color del botón de búsqueda en la barra de navegación */
+.navbar .btn-outline-success {
+    color: #fff; /* Color del texto del botón */
+    background-color: #28a745; /* Color de fondo del botón */
+    border-color: #28a745; /* Color del borde del botón */
+  }
+  
+  .navbar .btn-outline-success:hover {
+    background-color: #218838; /* Color de fondo del botón al pasar el cursor sobre él */
+    border-color: #1e7e34; /* Color del borde del botón al pasar el cursor sobre él */
+  }
+  
+
+.logo1 {
+    display: flex;
+    color: var(--green);
+    font-size: 30px;
+    font-family: Tahoma;
+    margin-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    width: auto;
+    height: 380px;
+    text-align: center;
+    box-shadow: 10px 15px 15px 0px rgba(58, 54, 54, 0.1); /* Cambiado de #000000 */
+    background-color: var(--green);
+}
+
+/* En el archivo style.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navbar {
+    width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho disponible */
+}
+
+
+.menu a {
+    display: block;
+    padding: 30px;
+    color: rgb(240, 5, 5); /* Cambiado de rgb(0, 0, 0) */
+    background-color: transparent; /* Cambiado de rgb(0, 0, 0) */
+    box-shadow: 0 15px 15px rgba(178, 20, 20, 0.1); /* Cambiado de 15px #00bf6f */
+}
+
+.menu a:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.hamb-line {
+    background: var(--green); /* Cambia este color al que desees */
+    display: flexbox;
+    height: 5px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: var(--green); /* Cambia este color al que desees */
+
+    display: ruby-text-container;
+    height: 100%;
+    position: absolute;
+    transition: all 0.25s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 8px;
+}
+
+.hamb-line::after {
+    top: -8px;
+}
+
+
+.card {
+    width: auto;
+    border: 5px solid #5f5c5c;
+    padding: 15px;
+    border-radius: 40px;
+  
+}
+.card-column {
+    width: auto;
+    border: 5px solid #000000;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--green);
+    border-radius: 25px;
+}
+
+.card h3 {
+    margin-top: 25;
+    text-align: center;
+    width: auto;
+}
+
+.card hr {
+    margin: 10px 0;
+    border-color: #ccc;
+}
+
+.card img {
+    display: justify;
+    margin: 15px;
+}
+
+.card h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    margin: 10px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 660px) {
+    .nav {
+        max-height: none;
+        top: auto; /* Cambiado de 0 */
+        position: static; /* Cambiado de relative */
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+    .menu li {
+        float: left;
+    }
+
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--green);
+    }
+
+    .hamb {
+        display: none;
+    }
+
+    .logo1 {
+        display: block; /* Cambiado de auto */
+        margin-left: 20px; /* Ajustado de 25px */
+        width: auto;
+    }
+}
+
+footer {
+    background-color: var(--green);
+    overflow: hidden;
+}
+
+footer .pie_pagina {
+    padding-top: 20px;
+    margin: 30px;
+}
+
+.pie_pagina .canalAtencion {
+    line-height: 30px;
+}
+
+.pie_pagina h3 {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.pie_pagina p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.pie_pagina h4 {
+    color: white;
+    line-height: 40px;
+}
+
+.renting-redes {
+    width: 100%;
+    display: flex;
+}
+
+.pie_pagina .Colombia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.Colombia p {
+    font-size: 1.2rem;
+}
+

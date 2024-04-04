@@ -1,0 +1,151 @@
+/* Estilos base para el menú */
+.menu-toggle {
+  display: none; /* Oculta el interruptor del menú */
+}
+
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+  color: rgb(212, 25, 25); /* Color del icono */
+  background-color: white; /* Color de fondo del botón */
+  width: 50px; /* Tamaño del botón de hamburguesa */
+  height: 50px;
+  position: relative; 
+  top: justify;
+  width: auto center;
+  font-family: 'Times New Roman';    
+  color: white;
+}
+
+/* Cambiar el color del botón de búsqueda en la barra de navegación */
+.navbar .btn-outline-success {
+  color: #fff; /* Color del texto del botón */
+  background-color: #28a745; /* Color de fondo del botón */
+  border-color: #28a745; /* Color del borde del botón */
+}
+
+.navbar .btn-outline-success:hover {
+  background-color: #218838; /* Color de fondo del botón al pasar el cursor sobre él */
+  border-color: #1e7e34; /* Color del borde del botón al pasar el cursor sobre él */
+}
+
+.nav-menu {
+  display: flex; /* Usa el modelo de caja flexible para alinear elementos */
+  justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del eje principal */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.menu-icon {
+  cursor: pointer; /* Cambia el cursor al pasar sobre el icono del menú */
+}
+
+.menu-icon .fa-bars {
+  color: #c61a1a; /* Color del icono de las barras del menú */
+}
+
+.menu.btn {
+  background-color: #c61a1a; /* Color de fondo del botón del menú */
+  border: 1px color( red green blue); /* Borde del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Radio del borde del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  color: aqua; /* Color del texto del botón */
+  font-size: 16px; /* Tamaño del texto del botón */
+}
+
+.menu-btn:hover {
+  background-color: #c61a1a; /* Color de fondo del botón del menú al pasar el cursor sobre él */
+}
+
+.menu-links {
+  display: flex; /* Usa el modelo de caja flexible para alinear elementos */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.menu-links a {
+  margin-right: 20px; /* Margen derecho entre elementos del menú */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+.dropdown {
+  position: relative; /* Posición relativa para los elementos desplegables */
+  display: inline-block; /* Elemento en línea con un ancho automático */
+}
+
+.dropdown-content {
+  display: none; /* Oculta el contenido del menú desplegable por defecto */
+  position: absolute; /* Posición absoluta para el contenido del menú desplegable */
+  background-color: #f9f9f9; /* Color de fondo del menú desplegable */
+  min-width: 160px; /* Ancho mínimo del menú desplegable */
+  z-index: 1; /* Z-index para colocar el menú desplegable por encima del resto del contenido */
+}
+
+.dropdown-content a {
+  color: black; /* Color del texto de los enlaces del menú desplegable */
+  padding: 12px 16px; /* Espaciado interno de los enlaces del menú desplegable */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  display: block; /* Convierte los enlaces en bloques */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Color de fondo de los enlaces del menú desplegable al pasar el cursor sobre ellos */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Muestra el contenido del menú desplegable al pasar el cursor sobre el elemento principal */
+}
+
+/* Cambiar el color del botón de búsqueda */
+.navbar .btn-outline-success {
+  color: #000000; /* Color del texto del botón */
+  background-color: #000000; /* Color de fondo del botón */
+  border-color: #ffffff; /* Color del borde del botón */
+}
+
+.navbar .btn-outline-success:hover {
+  background-color: #218838; /* Color de fondo del botón al pasar el cursor sobre él */
+  border-color: #1e7e34; /* Color del borde del botón al pasar el cursor sobre él */
+}
+
+/* Media queries para hacer el menú responsive */
+@media screen and (max-width: 480) {
+  .menu-links {
+    display: none; /* Oculta los elementos del menú en pantallas pequeñas */
+    flex-direction: column; /* Cambia la dirección de los elementos a columnas */
+  }
+
+  .menu-toggle:checked ~ .nav-menu .menu-links {
+    display: flex; /* Muestra los elementos del menú cuando el toggle está activo */
+  }
+
+  .menu-toggle:checked ~ .nav-menu .menu-links a {
+    display: block; /* Muestra los enlaces del menú en pantallas pequeñas */
+    margin: 10px 0; /* Espaciado entre los enlaces del menú */
+  }
+
+  .menu-toggle:checked + .menu-icon .fa-bars {
+    display: none; /* Oculta el icono de las barras del menú cuando el toggle está activo */
+  }
+
+  .menu-toggle:checked + .menu-icon .fa-times {
+    display: inline; /* Muestra el icono de la cruz del menú cuando el toggle está activo */
+  }
+
+  .dropdown {
+    margin-bottom: 20px; /* Margen inferior para los elementos desplegables */
+  }
+
+  .dropdown-content {
+    position: static; /* Cambia la posición del menú desplegable a estática */
+    display: none; /* Oculta el contenido del menú desplegable */
+  }
+
+  .menu-icon {
+    display: inline; /* Muestra el icono del menú */
+  }
+
+  .menu-icon .fa-times {
+    display: none; /* Oculta el icono de la cruz del menú */
+  }
+  .img {
+    width: 50%;
+  }
+}

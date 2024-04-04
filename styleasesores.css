@@ -1,0 +1,230 @@
+/* Define la variable de color verde */
+:root {
+    --green: #00bf6f;
+}
+
+/* Resetea los márgenes, rellenos y cajas de todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--green);
+}
+
+/* Estilos para el encabezado */
+.header1 {
+    background-color: var(--green);
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* No es necesario especificar 'relative' si se quiere usar el valor por defecto */
+    top: justify; /* Este valor no tiene efecto */
+    width: auto center; /* Esto no tiene efecto */
+    font-family: Verdana;
+    color: var(--green);
+    border: 10px solid #ffffff;
+}
+
+/* CSS personalizado */
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+    color: rgb(212, 25, 25); /* Color del icono */
+    background-color: white; /* Color de fondo del botón */
+    width: 50px; /* Tamaño del botón de hamburguesa */
+    height: 50px;
+    position: relative; 
+    top: justify;
+    width: auto center;
+    font-family: 'Times New Roman';    
+    color: white;
+}
+
+/* Cambiar el color del botón de búsqueda en la barra de navegación */
+.navbar .btn-outline-success {
+    color: #fff; /* Color del texto del botón */
+    background-color: #28a745; /* Color de fondo del botón */
+    border-color: #28a745; /* Color del borde del botón */
+  }
+  
+  .navbar .btn-outline-success:hover {
+    background-color: #218838; /* Color de fondo del botón al pasar el cursor sobre él */
+    border-color: #1e7e34; /* Color del borde del botón al pasar el cursor sobre él */
+  }
+
+/* Estilos para el logo */
+.logo1 {
+    display: flex;
+    color: var(--green);
+    font-size: 30px;
+    font-family: Tahoma;
+    margin-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    width: auto;
+    height: 380px;
+    text-align: center;
+    box-shadow: 10px 15px 15px 0px rgba(255, 0, 0, 0.1); /* Cambia el color de la sombra */
+    background-color: var(--green);
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 50px; /* No es una forma válida de especificar el ancho */
+    margin: 50px auto; /* Define los márgenes del contenedor */
+    padding: 20px; /* Define el relleno del contenedor */
+    background: #fff; /* Define el color de fondo */
+    border-radius: 5px; /* Define el radio de borde */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al contenedor */
+}
+
+/* Estilos para los títulos */
+h2 {
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: auto; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Define el relleno */
+    margin: 10px 0; /* Define el margen superior e inferior */
+    border: 5px solid #000000; /* Define el borde */
+    border-radius: 10px; /* Define el radio de borde */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho y la altura */
+}
+
+/* Estilos para el botón de enviar */
+input[type="submit"] {
+    width: auto; /* Ocupa todo el ancho disponible */
+    background: #007bff; /* Define el color de fondo */
+    color: #fff; /* Define el color del texto */
+    border: none; /* Elimina el borde */
+    padding: 10px; /* Define el relleno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Define el radio de borde */
+}
+
+/* Estilos para el botón de enviar al pasar el cursor sobre él */
+input[type="submit"]:hover {
+    background: #0056b3; /* Cambia el color de fondo */
+}
+
+/* Estilos para el icono de menú desplegable */
+.hamb-line {
+    background: var(--green); /* Cambia el color de las líneas del icono */
+   
+    height: 8px; /* Define la altura de las líneas */
+    position: relative; /* Define la posición */
+    width: 30px; /* Define el ancho */
+}
+
+/* Estilos para las líneas del icono de menú desplegable */
+.hamb-line::before,
+.hamb-line::after {
+    background: black; /* Cambia el color de las líneas antes y después */
+    display: ruby-text-container; /* Esto no es una propiedad válida */
+    height: 100%; /* Define la altura */
+    position: absolute; /* Define la posición */
+    transition: all 0.25s ease-out; /* Define la transición */
+    width: 100%; /* Define el ancho */
+}
+
+/* Estilos para la línea antes del icono de menú desplegable */
+.hamb-line::before {
+    top: 8px; /* Define la posición */
+}
+
+/* Estilos para la línea después del icono de menú desplegable */
+.hamb-line::after {
+    top: -8px; /* Define la posición */
+}
+
+
+/* Estilos para la barra de navegación en dispositivos grandes */
+@media (min-width: 660px) {
+    .nav {
+        max-height: none; /* Restaura la altura máxima */
+        top: auto; /* Restaura la posición superior */
+        position: static; /* Restaura la posición */
+        float: right; /* Restaura el flotado */
+        width: fit-content; /* Restaura el ancho */
+        background-color: transparent; /* Restaura el color de fondo */
+    }
+
+    .menu li {
+        float: left; /* Define el flotado de los elementos del menú */
+    }
+
+    .menu a:hover {
+        background-color: black; /* Cambia el color de fondo al pasar el cursor sobre los enlaces */
+        color: var(--green); /* Cambia el color del texto al pasar el cursor sobre los enlaces */
+    }
+
+    .hamb {
+        display: none; /* Oculta el botón de menú en dispositivos grandes */
+    }
+
+    .logo1 {
+        display: block; /* Restaura la visualización del logo */
+        margin-left: 20px; /* Ajusta el margen izquierdo del logo */
+        width: auto; /* Restaura el ancho automático del logo */
+    }
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: var(--green); /* Define el color de fondo */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+/* Estilos para los elementos dentro del pie de página */
+footer .pie_pagina {
+    padding-top: 20px; /* Define el relleno superior */
+    margin: 30px; /* Define el margen */
+}
+
+/* Estilos para el título del pie de página */
+.pie_pagina h3 {
+    font-size: 30px; /* Define el tamaño de la fuente */
+    color: white; /* Define el color del texto */
+    margin-bottom: 20px; /* Define el margen inferior */
+}
+
+/* Estilos para el texto dentro del pie de página */
+.pie_pagina p {
+    color: white; /* Define el color del texto */
+    font-size: 1.2rem; /* Define el tamaño de la fuente */
+}
+
+/* Estilos para los subtítulos dentro del pie de página */
+.pie_pagina h4 {
+    color: white; /* Define el color del texto */
+    line-height: 40px; /* Define la altura de línea */
+}
+
+/* Estilos para las redes sociales en el pie de página */
+.renting-redes {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    display: flex; /* Muestra los elementos en línea */
+}
+
+/* Estilos para el contenido específico de Colombia en el pie de página */
+.pie_pagina .Colombia {
+    display: flex; /* Muestra los elementos en línea */
+    flex-direction: column; /* Cambia la dirección del flujo */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 70px; /* Define el margen superior */
+}
+
+/* Estilos para el texto dentro del contenido específico de Colombia en el pie de página */
+.Colombia p {
+    font-size: 1.2rem; /* Define el tamaño de la fuente */
+}
