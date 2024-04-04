@@ -1,0 +1,69 @@
+/* Estilos para centrar el carrusel */
+.carousel {
+  margin: auto; /* Centra horizontalmente el carrusel */
+  width: 80%; /* Ajusta el ancho del carrusel según sea necesario */
+}
+
+/* Estilos de las imágenes */
+.carousel-item img {
+    height: 200px; /* Ajusta la altura de las imágenes según tus necesidades */
+    object-fit: cover; /* Para asegurarte de que las imágenes cubran todo el contenedor */
+}
+
+/* Estilo de los controles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto; /* Ajusta el ancho según sea necesario */
+    background: rgba(0, 0, 0, 0.5); /* Color de fondo de los botones */
+    border: none; /* Quita los bordes */
+    border-radius: 50%; /* Hace que los botones sean redondos */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: white; /* Color de los iconos */
+}
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+    content: ''; /* Elimina el contenido por defecto */
+}
+/* Estilo del texto de Previous y Next */
+.carousel-control-prev span.visually,
+.carousel-control-next span.visually {
+    display: none; /* Oculta el texto visualmente */
+}
+
+
+
+.card {
+  width: auto;
+  border: 5px solid #5f5c5c;
+  padding: 15px;
+  border-radius: 40px;
+
+}
+
+.card-column {
+  width: auto;
+  border: 5px solid #000000;
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+  background-color: var(--green);
+  border-radius: 25px;
+}
+
+.card h3 {
+  margin-top: 25;
+  text-align: center;
+  width: auto;
+}
+
+.card h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  margin: 10px;
+  margin-bottom: 25px;
+}
